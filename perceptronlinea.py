@@ -5,7 +5,7 @@ from perceptron import *
 
 
 pLinea = Perceptron(1)
-pLinea.setW([2,-2])
+pLinea.setW([1,1])
 
 puntos= []
 azulesx, azulesy = [], []
@@ -44,7 +44,7 @@ for i, p in enumerate(puntos):
 #    ese es mi resultado esperado para ese punto( dos respuestas posibles, 1 o 0)
 
 #entreno mi perceptron con esos datos
-for i in range(10):
+for i in range(10000):
     for j, rx in enumerate(rojosx):
         pLinea.train(0,[rx, rojosy[j]])
     for j, ax in enumerate(azulesx):
