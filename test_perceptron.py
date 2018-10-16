@@ -1,5 +1,5 @@
 import unittest
-import perceptron
+import iasubject.perceptron
 
 class TestPerceptron(unittest.TestCase):
     pnand = perceptron.Pnand()
