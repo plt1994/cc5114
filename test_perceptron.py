@@ -1,10 +1,13 @@
 import unittest
-import iasubject.perceptron
+import iasubject.perceptron as p
 
 class TestPerceptron(unittest.TestCase):
-    pnand = perceptron.Pnand()
-    por = perceptron.Por()
-    pand = perceptron.Pand()
+    pnand = p.Perceptron(3)
+    pnand.setW([-2,-2])
+    por = p.Perceptron(0)
+    por.setW([1,1])
+    pand = p.Perceptron(-1)
+    pand.setW([1,1])
 
 
     def test_update(self):
