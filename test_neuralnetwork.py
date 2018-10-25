@@ -1,5 +1,5 @@
 import unittest
-import iasubject.neuralnetwork as nn
+import neuralnetwork.neuralnetwork as nn
 
 class TestNeuralNetwork(unittest.TestCase):
 

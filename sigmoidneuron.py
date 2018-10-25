@@ -1,4 +1,4 @@
-import iasubject.neuron as neuron
+import neuralnetwork.neuron as neuron
 import math
 
 class SigmudNeuron(neuron.Neuron):

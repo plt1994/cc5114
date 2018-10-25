@@ -1,5 +1,5 @@
-import iasubject.neuron as nr
-import iasubject.sigmoidneuron as sr
+import neuralnetwork.neuron as nr
+import neuralnetwork.sigmoidneuron as sr
 
 
 def stdW(n: int):

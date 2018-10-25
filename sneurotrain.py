@@ -1,6 +1,6 @@
 from pylab import *
 import matplotlib.pyplot as plt
-from iasubject.sigmoidneuron import *
+from neuralnetwork.sigmoidneuron import *
 
 
 neuronor = SigmudNeuron(2)

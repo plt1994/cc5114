@@ -1,6 +1,6 @@
 import unittest
-import iasubject.neuralnetwork as nn
-import iasubject.sigmoidneuron as sn
+import neuralnetwork.neuralnetwork as nn
+import neuralnetwork.sigmoidneuron as sn
 
 
 class TestNeuronLayer(unittest.TestCase):

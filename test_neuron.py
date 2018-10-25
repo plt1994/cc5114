@@ -1,5 +1,5 @@
 import unittest
-import iasubject.neuron as n
+import neuralnetwork.neuron as n
 
 
 def f(x):

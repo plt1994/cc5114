@@ -1,7 +1,7 @@
 from pylab import *
 import matplotlib.pyplot as plt
 
-import iasubject.neuralnetwork as nn
+import neuralnetwork.neuralnetwork as nn
 
 layerLast = nn.NeuronLayer(1)
 layer1 = nn.NeuronLayer(3)

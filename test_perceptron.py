@@ -1,5 +1,5 @@
 import unittest
-import iasubject.perceptron as p
+import neuralnetwork.perceptron as p
 
 class TestPerceptron(unittest.TestCase):
     pnand = p.Perceptron(3)
