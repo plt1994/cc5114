@@ -1,4 +1,4 @@
-import neuralnetwork.neuron as neuron
+import nnetwrk.neuron as neuron
 
 class Perceptron(neuron.Neuron):
     def __init__(self, b):

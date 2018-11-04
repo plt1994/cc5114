@@ -1,8 +1,8 @@
 from pylab import *
 import matplotlib.pyplot as plt
 import random
-from neuralnetwork.perceptron import *
-import neuralnetwork.curvas as cv
+from nnetwrk.perceptron import *
+import nnetwrk.curvas as cv
 
 
 pLinea = Perceptron(1)

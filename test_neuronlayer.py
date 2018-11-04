@@ -1,12 +1,13 @@
 import unittest
-import neuralnetwork.neuralnetwork as nn
-import neuralnetwork.sigmoidneuron as sn
+import nnetwrk.neuralnetwork as nn
+import nnetwrk.neuronlayer
+import nnetwrk.sigmoidneuron as sn
 
 
 class TestNeuronLayer(unittest.TestCase):
 
-    layer = nn.NeuronLayer(2)
-    layer_2 = nn.NeuronLayer(4)
+    layer = nnetwrk.neuronlayer.NeuronLayer(2)
+    layer_2 = nnetwrk.neuronlayer.NeuronLayer(4)
     sneuron = sn.SigmudNeuron(3)
     neurons = [sn.SigmudNeuron(4),sn.SigmudNeuron(3),sn.SigmudNeuron(8)]
 
