@@ -7,7 +7,7 @@ class Neuron:
         self.delta = 0
 
     def setW(self, w):
-        self.w = []
+        self.w.clear()
         for wi in w:
             self.w.append(wi)
 
@@ -32,17 +32,18 @@ class Neuron:
     def getDelta(self):
         return self.delta
 
-    def updateW(self,input,lr):
+    def updateW(self,input:list,lr):
         for i, xi in enumerate(input):
-            self.w[i] = self.w[i] + (lr * self.getDelta() * xi)
+            self.w[i] += lr * self.getDelta() * xi
 
     def updateB(self, lr):
-        self.setB(self.getB()+(lr*self.getDelta()))
+        self.b += lr*self.delta
 
-    def calc(self,x):
+    def calc(self,x:list):
         'Calcula un output en base a los pesos y de la neurona, y el input x\
         , x debe ser una lista o similar, pues podria causar un problema sino'
-        r = self.b
+        r = 0
+        r += self.b
         for i, xi in enumerate(x):
             r+= xi * self.w[i]
         self.setOutput(self.f(r))

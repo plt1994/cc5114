@@ -47,5 +47,9 @@ class TestNeuronLayer(unittest.TestCase):
             else:
                 self.assertEqual(n.getOutput(), 0)
 
+    def test_f_feed(self):
+        pass
+        #self.layer.feed()
+
 if __name__ == '__main__':
     unittest.main()

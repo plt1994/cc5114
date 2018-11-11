@@ -1,61 +1,50 @@
-from pylab import *
-import matplotlib.pyplot as plt
+from nnetwrk.datautils import create_nn, graficar4, gen_datag
 
-import neuralnetwork.neuralnetwork as nn
+#entreno mi red con los sets de input y output
 
-layerLast = nn.NeuronLayer(1)
-layer1 = nn.NeuronLayer(3)
-layer2 = nn.NeuronLayer(2)
+#graficamos 4 conjuntos de datos
 
-red = nn.NeuralNetwork(layerLast)
-red.addLayer(layer1)
-red.addLayer(layer2)
-nOfInputs = 2
-pesos = [1,-2]
-red.setW(pesos)
+#genera los datos para ser graficados
 
-print(red.calc([0,0]))
+#creamos diferentes configuraciones de redes,
+#considerando 1 output y 2 input
+nnet1 = create_nn(2, [2, 1], [-0.5, 0.5])
+nnet2 = create_nn(2, [2, 1], [-0.5, 0.5])
+nnet3 = create_nn(2, [2, 1])
+nnet4 = create_nn(2, [2, 1])
+redes = [nnet1, nnet2, nnet3, nnet4]
 
-
-
+#generamos los datos
 setEntrada = [[0, 0], [0, 1], [1, 0], [1, 1]]
-expectedOutputs = [0, 1, 1, 0]
+expectedOutputs = [[0], [1], [1], [0]]
 
-#entreno mi red con esos datos
-def train(times, lr = 0.1):
-    # for i in range(times):
-    #     for j, x in enumerate(setEntrada):
-    #         red.train(x, expectedOutputs[j],lr)
-    error = red.networkTrain(setEntrada,expectedOutputs,times)
+x, y = gen_datag(redes, setEntrada, expectedOutputs, [10000, 10000, 10000, 10000], [0.3, 0.3, 0.3, 0.3])
+#mostramos los gráficos
+graficar4(x, y)
 
-    precision = 0
-    l = 1
-    for k in range(l):
-        for i, p in enumerate(setEntrada):
-            valor = red.calc(p)[0]
-            if valor >=0.5:
-                valor = 1
-            else:
-                valor = 0
-            valorEsperado = expectedOutputs[i]
-            if (valor == valorEsperado):
-                precision += 1
-            #print(p, expectedOutputs[i], valor)
-    #red.getBias()
-    #return precision/(4*l)
-    return error, precision
-
-# # pr = []
+# times = 2000
 # testInterval = range(times)
-# # for i in testInterval:
-# #     pr.append(train(100))
-# #
-# # plt.plot(testInterval, pr)
-# # show()
+# errorlist1, outputs1 = train(nnet1, times, 0.3)
+# #y = train(times)
+# print(outputs1)
+# print(errorlist1[0][-1])
+# for i in outputs1:
+#     if i[0]>0.7:
+#         print(1)
+#     elif i[0]<0.3:
+#         print(0)
+# plt.plot(testInterval, errorlist1[0])
+# plt.show()
 
-times = 5000
-testInterval = range(times)
-y, c = train(times)
-print(c)
-plt.plot(testInterval,y)
-plt.show()
+# while(True):
+# #     test = input('ingrese dos valores separados por un espacio: ')
+# #     n = test.split(' ')
+# #     print(n)
+# #     for i,v in enumerate(n):
+# #         n[i] = int(v)
+# #     res = red.calc(n)
+# #     if res[0]>0.7:
+# #         res = 1
+# #     elif res[0]<0.3:
+# #         res = 0
+# #     print(res)
